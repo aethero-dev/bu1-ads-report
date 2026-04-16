@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BU1.cz — Google Ads Analýza 2024–2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    /* ── AETHERO Design Tokens ── */
+    :root {
+      --color-bg-primary:      #000326;
+      --color-bg-elevated:     #0C0C42;
+      --color-bg-off-white:    #F7F7F5;
+      --color-surface-light:   #D2D2D2;
+      --color-text-primary:    #FFFFFF;
+      --color-text-secondary:  #A081D1;
+      --color-text-muted:      #A0A3BD;
+      --color-action-primary:  #0DD4CD;
+      --color-action-hover:    #16BECF;
+      --color-accent-purple:   #CB00D7;
+      --color-accent-mid-purple: #55289E;
+      --font-heading: 'Kanit', system-ui, sans-serif;
+      --font-body:    'Montserrat', system-ui, sans-serif;
+      --font-size-body-sm: 14px;
+      --font-size-body:    16px;
+      --font-size-body-lg: 18px;
+      --font-size-h3:      24px;
+      --font-size-h2:      40px;
+      --font-size-h1:      56px;
+      --font-weight-regular:  400;
+      --font-weight-medium:   500;
+      --font-weight-semibold: 600;
+      --font-weight-bold:     700;
+      --line-height-tight:   1.1;
+      --line-height-heading: 1.2;
+      --line-height-body:    1.6;
+      --space-xs:  8px;
+      --space-sm:  16px;
+      --space-md:  24px;
+      --space-lg:  40px;
+      --space-xl:  80px;
+      --space-xxl: 120px;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --shadow-sm: rgba(0,0,0,0.3) 0px 4px 16px 0px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-family: var(--font-body);
+      font-size: var(--font-size-body);
+      line-height: var(--line-height-body);
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 var(--space-lg);
+    }
+
+    section {
+      padding-block: var(--space-xl);
+    }
+
+    /* ── Typography ── */
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 5vw, var(--font-size-h1));
+      font-weight: var(--font-weight-bold);
+      line-height: var(--line-height-tight);
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 4vw, var(--font-size-h2));
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--line-height-heading);
+    }
+    h3 {
+      font-family: var(--font-heading);
+      font-size: var(--font-size-h3);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.3;
+    }
+    .label {
+      font-size: var(--font-size-body-sm);
+      font-weight: var(--font-weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-action-primary);
+    }
+    .muted { color: var(--color-text-muted); }
+    .accent { color: var(--color-action-primary); }
+    .purple { color: var(--color-text-secondary); }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 3, 38, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(13, 212, 205, 0.15);
+      padding: var(--space-sm) 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-weight: var(--font-weight-bold);
+      font-size: 18px;
+      color: var(--color-text-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+    .nav-logo span { color: var(--color-action-primary); }
+    .nav-links {
+      display: flex;
+      gap: var(--space-md);
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-size: var(--font-size-body-sm);
+      font-weight: var(--font-weight-medium);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--color-action-primary); }
+    .nav-badge {
+      background: var(--color-bg-elevated);
+      border: 1px solid rgba(13, 212, 205, 0.3);
+      color: var(--color-action-primary);
+      font-size: 12px;
+      font-weight: var(--font-weight-semibold);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding-block: var(--space-xxl) var(--space-xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(203,0,215,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(13,212,205,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    .hero-eyebrow-line {
+      width: 40px;
+      height: 2px;
+      background: var(--color-action-primary);
+    }
+    .hero h1 { margin-bottom: var(--space-sm); }
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--color-action-primary), #16BECF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: var(--font-size-body-lg);
+      color: var(--color-text-muted);
+      max-width: 620px;
+      margin-bottom: var(--space-lg);
+    }
+    .hero-meta {
+      display: flex;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+    }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .hero-meta-item .val {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-action-primary);
+    }
+    .hero-meta-item .desc { font-size: var(--font-size-body-sm); color: var(--color-text-muted); }
+
+    /* ── Section heading ── */
+    .section-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 56px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-accent-mid-purple);
+      line-height: 1;
+      opacity: 0.5;
+      min-width: 56px;
+    }
+    .section-heading-text h2 { margin-bottom: var(--space-xs); }
+    .section-heading-text p { color: var(--color-text-muted); max-width: 560px; }
+
+    /* ── KPI Cards ── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+    .kpi-card {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-md);
+      padding: var(--space-md) var(--space-lg);
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--color-action-primary), transparent);
+    }
+    .kpi-card.purple-accent::before {
+      background: linear-gradient(90deg, var(--color-accent-purple), transparent);
+    }
+    .kpi-label {
+      font-size: var(--font-size-body-sm);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: var(--space-xs);
+    }
+    .kpi-value {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      line-height: 1.1;
+    }
+    .kpi-value.cyan { color: var(--color-action-primary); }
+    .kpi-sub {
+      font-size: var(--font-size-body-sm);
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+    .kpi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(13, 212, 205, 0.12);
+      color: var(--color-action-primary);
+      font-size: 12px;
+      font-weight: var(--font-weight-semibold);
+      padding: 3px 8px;
+      border-radius: 100px;
+      margin-top: var(--space-xs);
+    }
+    .kpi-badge.positive::before { content: '↑ '; }
+    .kpi-badge.negative {
+      background: rgba(203,0,215,0.12);
+      color: var(--color-accent-purple);
+    }
+    .kpi-badge.negative::before { content: '↓ '; }
+
+    /* ── Chart Container ── */
+    .chart-card {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      border: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: var(--space-md);
+    }
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .chart-title { font-family: var(--font-heading); font-size: 20px; font-weight: var(--font-weight-semibold); }
+    .chart-legend {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-size: var(--font-size-body-sm);
+      color: var(--color-text-muted);
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .chart-wrap { position: relative; height: 320px; }
+
+    /* ── Two col ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+    @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── YoY comparison ── */
+    .yoy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+    @media (max-width: 640px) { .yoy-grid { grid-template-columns: 1fr; } }
+    .yoy-card {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .yoy-card h3 { margin-bottom: var(--space-md); }
+    .yoy-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-xs) 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .yoy-row:last-child { border-bottom: none; }
+    .yoy-row .metric { font-size: var(--font-size-body-sm); color: var(--color-text-muted); }
+    .yoy-row .val { font-weight: var(--font-weight-semibold); font-family: var(--font-heading); }
+
+    /* ── Campaign table ── */
+    .table-wrap {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead tr {
+      background: rgba(13,212,205,0.06);
+    }
+    th {
+      font-family: var(--font-heading);
+      font-size: var(--font-size-body-sm);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: var(--space-sm) var(--space-md);
+      text-align: left;
+      white-space: nowrap;
+    }
+    td {
+      padding: var(--space-sm) var(--space-md);
+      font-size: var(--font-size-body-sm);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(255,255,255,0.03); }
+    .roas-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-weight: var(--font-weight-semibold);
+      font-size: 13px;
+    }
+    .roas-high { background: rgba(13,212,205,0.15); color: var(--color-action-primary); }
+    .roas-mid  { background: rgba(160,129,209,0.15); color: var(--color-text-secondary); }
+    .roas-low  { background: rgba(255,255,255,0.08); color: var(--color-text-muted); }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: var(--font-weight-semibold);
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+    .status-active { background: rgba(13,212,205,0.12); color: var(--color-action-primary); }
+    .status-paused { background: rgba(255,255,255,0.08); color: var(--color-text-muted); }
+    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+    /* ── Recommendations ── */
+    .rec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-md);
+    }
+    .rec-card {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .rec-card-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .rec-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .rec-icon.red    { background: rgba(255,60,60,0.12); }
+    .rec-icon.orange { background: rgba(255,160,0,0.12); }
+    .rec-icon.green  { background: rgba(13,212,205,0.12); }
+    .rec-card h3 { font-size: 18px; }
+    .rec-card p  { font-size: var(--font-size-body-sm); color: var(--color-text-muted); line-height: 1.6; }
+    .priority-tag {
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: var(--font-weight-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .priority-red    { background: rgba(255,60,60,0.15); color: #ff6b6b; }
+    .priority-orange { background: rgba(255,160,0,0.15); color: #ffa500; }
+    .priority-green  { background: rgba(13,212,205,0.15); color: var(--color-action-primary); }
+
+    /* ── Seasonal ── */
+    .season-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+    @media (max-width: 768px) { .season-grid { grid-template-columns: repeat(2, 1fr); } }
+    .season-card {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      border: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .season-emoji { font-size: 32px; margin-bottom: var(--space-xs); }
+    .season-month { font-family: var(--font-heading); font-weight: var(--font-weight-semibold); margin-bottom: 4px; }
+    .season-desc  { font-size: var(--font-size-body-sm); color: var(--color-text-muted); }
+    .season-roas  { margin-top: var(--space-xs); font-family: var(--font-heading); font-size: 20px; color: var(--color-action-primary); font-weight: var(--font-weight-bold); }
+
+    /* ── Web section ── */
+    .web-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+    }
+    @media (max-width: 768px) { .web-grid { grid-template-columns: 1fr; } }
+    .web-card {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .web-card-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    .web-logo {
+      background: rgba(13,212,205,0.1);
+      border-radius: var(--radius-sm);
+      padding: var(--space-xs);
+      font-family: var(--font-heading);
+      font-weight: var(--font-weight-bold);
+      font-size: 14px;
+      color: var(--color-action-primary);
+    }
+    .improvement-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-xs); }
+    .improvement-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-xs);
+      font-size: var(--font-size-body-sm);
+      color: var(--color-text-muted);
+      padding: var(--space-xs) 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .improvement-list li:last-child { border-bottom: none; }
+    .improvement-list li::before {
+      content: '→';
+      color: var(--color-action-primary);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Priority table ── */
+    .priority-list {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+    .priority-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-md) var(--space-lg);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .priority-item:last-child { border-bottom: none; }
+    .priority-num {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-accent-mid-purple);
+      opacity: 0.5;
+      min-width: 36px;
+    }
+    .priority-text h4 {
+      font-family: var(--font-heading);
+      font-weight: var(--font-weight-semibold);
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    .priority-text p {
+      font-size: var(--font-size-body-sm);
+      color: var(--color-text-muted);
+    }
+    .priority-effort {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-block: var(--space-lg);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+    .footer-brand {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    .footer-brand span { color: var(--color-action-primary); }
+    .footer-meta { font-size: 13px; color: var(--color-text-muted); }
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-block: var(--space-xl);
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding-block: var(--space-xl); }
+      .section-number { font-size: 40px; }
+      .kpi-value { font-size: 28px; }
+      table { font-size: 12px; }
+      th, td { padding: var(--space-xs) var(--space-sm); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#">BU1<span>.cz</span> — Analýza</a>
+    <ul class="nav-links">
+      <li><a href="#prehled">Přehled</a></li>
+      <li><a href="#trend">Trend</a></li>
+      <li><a href="#kampane">Kampaně</a></li>
+      <li><a href="#web">Web</a></li>
+      <li><a href="#doporuceni">Doporučení</a></li>
+    </ul>
+    <span class="nav-badge">Duben 2024 – Duben 2026</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="label">Google Ads · 2 roky dat</span>
+    </div>
+    <h1>BU1.cz — Google Ads<br><span class="highlight">Komplexní analýza</span></h1>
+    <p class="hero-sub">Přehled výkonu účtu za období duben 2024 – duben 2026. Trendy, kampaně, sezónnost a konkrétní doporučení pro růst.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="val">14,2×</span>
+        <span class="desc">Průměrný ROAS Rok 2</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="val">7,2M Kč</span>
+        <span class="desc">Celková hodnota konverzí</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="val">+51 %</span>
+        <span class="desc">Zlepšení ROAS meziročně</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="val">−29 %</span>
+        <span class="desc">Úspora nákladů Rok 2 vs. Rok 1</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KPI SUMMARY -->
+<section id="prehled">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">01</div>
+      <div class="section-heading-text">
+        <h2>Roční srovnání</h2>
+        <p>Rok 2 utratil o 29 % méně, ale vydělal o 7 % více. ROAS vzrostl z 9,4× na 14,2×.</p>
+      </div>
+    </div>
+
+    <div class="yoy-grid">
+      <div class="yoy-card">
+        <h3 class="muted">Rok 1 · Apr 2024 – Břez 2025</h3>
+        <div class="yoy-row"><span class="metric">Celkové výdaje</span><span class="val">408 000 Kč</span></div>
+        <div class="yoy-row"><span class="metric">Hodnota konverzí</span><span class="val">3 823 000 Kč</span></div>
+        <div class="yoy-row"><span class="metric">ROAS</span><span class="val">9,4×</span></div>
+        <div class="yoy-row"><span class="metric">Nejsilnější měsíc</span><span class="val">Listopad 2024</span></div>
+        <div class="yoy-row"><span class="metric">Nejslabší měsíc</span><span class="val">Leden 2025</span></div>
+      </div>
+      <div class="yoy-card" style="border-color: rgba(13,212,205,0.2);">
+        <h3 class="accent">Rok 2 · Apr 2025 – Apr 2026</h3>
+        <div class="yoy-row"><span class="metric">Celkové výdaje</span><span class="val">290 000 Kč <span class="kpi-badge negative">−29 %</span></span></div>
+        <div class="yoy-row"><span class="metric">Hodnota konverzí</span><span class="val">4 109 000 Kč <span class="kpi-badge positive">+7 %</span></span></div>
+        <div class="yoy-row"><span class="metric">ROAS</span><span class="val accent">14,2× <span class="kpi-badge positive">+51 %</span></span></div>
+        <div class="yoy-row"><span class="metric">Nejsilnější měsíc</span><span class="val">Listopad 2025 & Srpen 2025</span></div>
+        <div class="yoy-row"><span class="metric">Nejslabší měsíc</span><span class="val">Leden 2026</span></div>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">2 roky — Výdaje celkem</div>
+        <div class="kpi-value">698 000 Kč</div>
+        <div class="kpi-sub">Z toho 408k Rok 1 / 290k Rok 2</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">2 roky — Hodnota konverzí</div>
+        <div class="kpi-value cyan">7 932 000 Kč</div>
+        <div class="kpi-sub">Celková generovaná hodnota</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Průměrný ROAS (2 roky)</div>
+        <div class="kpi-value">11,4×</div>
+        <div class="kpi-sub">Za každou 1 Kč → 11,4 Kč zpět</div>
+      </div>
+      <div class="kpi-card purple-accent">
+        <div class="kpi-label">Nejlepší ROAS (měsíc)</div>
+        <div class="kpi-value cyan">19,9×</div>
+        <div class="kpi-sub">Březen 2026 — rekord</div>
+        <span class="kpi-badge positive">Nový rekord</span>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Aktivní kampaně</div>
+        <div class="kpi-value">5</div>
+        <div class="kpi-sub">z 75+ celkových (paused/removed)</div>
+      </div>
+      <div class="kpi-card purple-accent">
+        <div class="kpi-label">Kampaň s nejlepším ROAS</div>
+        <div class="kpi-value cyan">48,8×</div>
+        <div class="kpi-sub">CZ Brand BU1 — brandová SEA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREND CHART -->
+<section id="trend" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">02</div>
+      <div class="section-heading-text">
+        <h2>Vývoj po měsících</h2>
+        <p>24 měsíců dat — výdaje, hodnota konverzí a ROAS. Viditelné jsou sezónní vrcholy i restrukturalizace kampaní v únoru 2025.</p>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <div class="chart-title">Výdaje vs. Hodnota konverzí (Kč)</div>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#0DD4CD"></div> Hodnota konverzí</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#CB00D7"></div> Výdaje</div>
+        </div>
+      </div>
+      <div class="chart-wrap"><canvas id="spendChart"></canvas></div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <div class="chart-title">ROAS po měsících</div>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#0DD4CD"></div> ROAS</div>
+          <div class="legend-item"><div class="legend-dot" style="background:rgba(255,255,255,0.2)"></div> Průměr (11,4×)</div>
+        </div>
+      </div>
+      <div class="chart-wrap"><canvas id="roasChart"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEASONAL -->
+<section id="sezonnost" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">03</div>
+      <div class="section-heading-text">
+        <h2>Sezónní vzorce</h2>
+        <p>Opakující se vzorce každý rok — klíčové pro plánování budgetů.</p>
+      </div>
+    </div>
+    <div class="season-grid">
+      <div class="season-card" style="border-color: rgba(13,212,205,0.3);">
+        <div class="season-emoji">⚽</div>
+        <div class="season-month">Srpen</div>
+        <div class="season-desc">Návrat do školy, start fotbalové sezóny, příprava</div>
+        <div class="season-roas">~13–17× ROAS</div>
+      </div>
+      <div class="season-card" style="border-color: rgba(13,212,205,0.3);">
+        <div class="season-emoji">🎁</div>
+        <div class="season-month">Listopad</div>
+        <div class="season-desc">Black Friday + Vánoce — druhý nejvýkonnější měsíc</div>
+        <div class="season-roas">~10–16× ROAS</div>
+      </div>
+      <div class="season-card" style="border-color: rgba(13,212,205,0.3);">
+        <div class="season-emoji">🌱</div>
+        <div class="season-month">Březen</div>
+        <div class="season-desc">Jarní nástup sezóny — rychlý restart po zimě</div>
+        <div class="season-roas">~14–20× ROAS</div>
+      </div>
+      <div class="season-card" style="border-color: rgba(160,129,209,0.3);">
+        <div class="season-emoji">❄️</div>
+        <div class="season-month">Leden</div>
+        <div class="season-desc">Nejslabší měsíc — snížit budget, neplýtvat</div>
+        <div class="season-roas" style="color: var(--color-text-secondary);">~7–13× ROAS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGNS -->
+<section id="kampane" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">04</div>
+      <div class="section-heading-text">
+        <h2>Přehled kampaní</h2>
+        <p>Fakticky aktivní jsou jen 5 kampaní. Zbytek je pozastaven nebo smazán.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap" style="margin-bottom: var(--space-md);">
+      <table>
+        <thead>
+          <tr>
+            <th>Kampaň</th>
+            <th>Typ</th>
+            <th>Status</th>
+            <th>Výdaje (Kč)</th>
+            <th>Konverze</th>
+            <th>Hod. konverzí (Kč)</th>
+            <th>ROAS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CZ | SEA | Brand BU1</strong></td>
+            <td>Search</td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Aktivní</span></td>
+            <td>28 287</td>
+            <td>954</td>
+            <td>1 219 387</td>
+            <td><span class="roas-badge roas-high">48,8×</span></td>
+          </tr>
+          <tr>
+            <td><strong>SK | SEA | Brand BU1</strong></td>
+            <td>Search</td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Aktivní</span></td>
+            <td>40 276</td>
+            <td>309</td>
+            <td>384 844</td>
+            <td><span class="roas-badge roas-mid">9,6×</span></td>
+          </tr>
+          <tr>
+            <td><strong>PLA | PMAX</strong></td>
+            <td>Performance Max</td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Aktivní</span></td>
+            <td>50 478</td>
+            <td>299</td>
+            <td>344 565</td>
+            <td><span class="roas-badge roas-mid">6,8×</span></td>
+          </tr>
+          <tr>
+            <td><strong>CZ | SEA | Brankář. rukavice (bez brand)</strong></td>
+            <td>Search</td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Aktivní</span></td>
+            <td>30 743</td>
+            <td>139</td>
+            <td>156 986</td>
+            <td><span class="roas-badge roas-low">5,1×</span></td>
+          </tr>
+          <tr>
+            <td><strong>SK | SEA | Brankář. rukavice (bez brand)</strong></td>
+            <td>Search</td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Aktivní</span></td>
+            <td>12 015</td>
+            <td>57</td>
+            <td>69 192</td>
+            <td><span class="roas-badge roas-low">5,8×</span></td>
+          </tr>
+          <tr style="opacity: 0.5;">
+            <td>Téma vs téma + kw, DRTG 0-3, DRTG 13-30, SEA obecná kw</td>
+            <td>Display / Search</td>
+            <td><span class="status-badge status-paused"><span class="status-dot"></span>Enabled, 0 dat</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td><span class="roas-badge roas-low">—</span></td>
+          </tr>
+          <tr style="opacity: 0.35;">
+            <td>~50 dalších kampaní (UK, DE, AT, FR, NL, PL, YouTube, Display…)</td>
+            <td>Mix</td>
+            <td><span class="status-badge status-paused"><span class="status-dot"></span>Pozastaveno</span></td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td><span class="roas-badge roas-low">—</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size: var(--font-size-body-sm);">* Data za posledních 6 měsíců (říjen 2025 – duben 2026)</p>
+  </div>
+</section>
+
+<!-- WEB ANALYSIS -->
+<section id="web" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">05</div>
+      <div class="section-heading-text">
+        <h2>Analýza webů</h2>
+        <p>BU1.cz a bu1sport.com běží na Shopify s Judge.me recenzemi a Klaviyo e-mailingem. Zde jsou klíčové oblasti pro optimalizaci.</p>
+      </div>
+    </div>
+
+    <div class="web-grid">
+      <div class="web-card">
+        <div class="web-card-header">
+          <div class="web-logo">BU1.cz</div>
+          <h3>Český trh · CZK</h3>
+        </div>
+        <ul class="improvement-list">
+          <li>Průvodce výběrem rukavic — interaktivní dotazník pro zákazníka, který neví, co koupit</li>
+          <li>Pokročilé filtrování: dle pozice, počasí (mokro/sucho), věku (junior/senior), ceny</li>
+          <li>Srovnávač produktů vedle sebe — pro rozhodování u dražšího zboží</li>
+          <li>Urgence &amp; dostupnost: "Posledních 3 kusů ve vel. 8" nebo "Expedujeme dnes do 14:00"</li>
+          <li>Upsell / cross-sell: tašky na rukavice, čistič, tape k objednávce</li>
+          <li>Bundle nabídky: "Rukavice + tréninková taška za výhodnou cenu"</li>
+          <li>Abandoned cart flow v Klaviyo (1h, 24h, 72h připomínka)</li>
+          <li>Post-purchase sekvence: péče o rukavice, video návod, žádost o recenzi</li>
+        </ul>
+      </div>
+      <div class="web-card">
+        <div class="web-card-header">
+          <div class="web-logo">BU1sport.com</div>
+          <h3>Anglický trh · USD</h3>
+        </div>
+        <ul class="improvement-list">
+          <li>Plná lokalizace pro EN trh — ceny v GBP/EUR, lokální recenze, lokální SEO</li>
+          <li>Správné hreflang tagy mezi bu1.cz (CS) a bu1sport.com (EN)</li>
+          <li>Německá verze webu pro DE expanzi (bu1.de nebo bu1sport.de)</li>
+          <li>Oddělená měnová a jazyková varianta pro UK vs. USA vs. DE zákazníky</li>
+          <li>Trust badges pro EN trh: bezpečné platby, doprava do zahraničí, délka doručení</li>
+          <li>Zákaznická podpora v angličtině (livechat nebo FAQ v EN)</li>
+          <li>Optimalizace PageSpeed — Judge.me + Klaviyo + GTM = hodně skriptů</li>
+          <li>Interní vyhledávání zvládající EN synonyma a překlepy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATIONS -->
+<section id="doporuceni" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">06</div>
+      <div class="section-heading-text">
+        <h2>Doporučení &amp; priority</h2>
+        <p>Co dělat první, co přinese největší dopad a co je výhledová příležitost pro growth.</p>
+      </div>
+    </div>
+
+    <div class="rec-grid" style="margin-bottom: var(--space-lg);">
+      <div class="rec-card">
+        <span class="priority-tag priority-red">🔴 Ihned</span>
+        <div class="rec-card-header">
+          <div class="rec-icon red">🧹</div>
+          <h3>Vyčistit aktivní prázdné kampaně</h3>
+        </div>
+        <p>4 kampaně mají status ENABLED, ale generují 0 kliků a 0 výdajů. Zaplevelují účet a komplikují strojové učení Googlu. Pozastavit nebo opravit.</p>
+      </div>
+      <div class="rec-card">
+        <span class="priority-tag priority-red">🔴 Ihned</span>
+        <div class="rec-card-header">
+          <div class="rec-icon red">🎯</div>
+          <h3>Spustit remarketing</h3>
+        </div>
+        <p>Všechny remarketingové kampaně jsou pozastavené. 70–80 % návštěvníků nekoupí při první návštěvě. PMAX s remarketingovým signálem nebo Display remarketing = okamžitý dopad.</p>
+      </div>
+      <div class="rec-card">
+        <span class="priority-tag priority-orange">🟠 Do měsíce</span>
+        <div class="rec-card-header">
+          <div class="rec-icon orange">📅</div>
+          <h3>Sezónní navýšení budgetu</h3>
+        </div>
+        <p>V srpnu 2025 utratil účet 36k a vydělal 616k (ROAS 16,8×), ale mohl utratit 55k+ a vydělat 900k+. Budget capping v nejsilnějším měsíci = ztracené peníze. Nastavit automatické navýšení pro srpen a listopad.</p>
+      </div>
+      <div class="rec-card">
+        <span class="priority-tag priority-orange">🟠 Do měsíce</span>
+        <div class="rec-card-header">
+          <div class="rec-icon orange">📧</div>
+          <h3>Klaviyo — Abandoned Cart</h3>
+        </div>
+        <p>Klaviyo je nainstalovaný, ale není jisté, zda běží abandoned cart flow. Tato sekvence (1h, 24h, 72h) je nejlukrativnější e-mailový flow bez extra nákladů na reklamu.</p>
+      </div>
+      <div class="rec-card">
+        <span class="priority-tag priority-green">🟡 Do kvartálu</span>
+        <div class="rec-card-header">
+          <div class="rec-icon green">🧭</div>
+          <h3>Průvodce výběrem rukavic</h3>
+        </div>
+        <p>Interaktivní dotazník na webu ("Jaká rukavice pro tebe?") dramaticky zvýší konverzní poměr. Zákazník neví, co koupit — průvodce ho dovede k produktu a snižuje bounce rate.</p>
+      </div>
+      <div class="rec-card">
+        <span class="priority-tag priority-green">🟢 Výhled</span>
+        <div class="rec-card-header">
+          <div class="rec-icon green">🌍</div>
+          <h3>Německý trh</h3>
+        </div>
+        <p>V účtu existují kampaně pro UK, DE, AT, FR, NL, PL — všechny pozastavené. S ROAS 14× na domácím trhu a silnou značkou je DE expanze logický krok. Největší potenciál v Evropě pro brankářské rukavice.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: var(--space-md);">Seřazeno podle dopadu</h3>
+    <div class="priority-list">
+      <div class="priority-item">
+        <div class="priority-num">1</div>
+        <div class="priority-text">
+          <h4>Pozastavit 4 prázdné aktivní kampaně</h4>
+          <p>Čistší účet → lepší strojové učení → lepší výsledky u kampaní, které běží</p>
+        </div>
+        <div class="priority-effort"><span class="priority-tag priority-red">Okamžitě · 5 min</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-text">
+          <h4>Spustit remarketing (PMAX nebo Display)</h4>
+          <p>Zachytit zákazníky, kteří odešli bez nákupu — největší nevyužitý potenciál</p>
+        </div>
+        <div class="priority-effort"><span class="priority-tag priority-red">Týden</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-text">
+          <h4>Nastavit sezónní navýšení budgetů (srpen, listopad)</h4>
+          <p>Automatické pravidlo nebo manuální reminder — využít peaky naplno</p>
+        </div>
+        <div class="priority-effort"><span class="priority-tag priority-orange">Měsíc</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-text">
+          <h4>Audit + spuštění Klaviyo abandoned cart</h4>
+          <p>Nejrychlejší přírůstek tržeb bez navýšení ad budgetu</p>
+        </div>
+        <div class="priority-effort"><span class="priority-tag priority-orange">Měsíc</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-text">
+          <h4>Průvodce výběrem rukavic na webu</h4>
+          <p>Zvýšení konverzního poměru a snížení bounce rate u nerozhodnutých zákazníků</p>
+        </div>
+        <div class="priority-effort"><span class="priority-tag priority-green">Kvartál</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-text">
+          <h4>Agresivnější rozvoj non-brand kampaní</h4>
+          <p>Brand kampaně mají ROAS 49× — ale přitahují jen stávající zákazníky. Non-brand přivádí nové.</p>
+        </div>
+        <div class="priority-effort"><span class="priority-tag priority-green">Kvartál</span></div>
+      </div>
+      <div class="priority-item">
+        <div class="priority-text">
+          <h4>Německý trh — kampaně + lokalizace webu</h4>
+          <p>Infrastruktura existuje, kampaně jen spát. Velký potenciál nového trhu.</p>
+        </div>
+        <div class="priority-effort"><span class="priority-tag priority-green">Výhled</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      Připraveno pro <span>BU1.cz</span> · <span>AETHERO</span> design system
+    </div>
+    <div class="footer-meta">Generováno: duben 2026 · Data: Google Ads API</div>
+  </div>
+</footer>
+
+<script>
+  const months = [
+    'Dub 24','Kvě 24','Čer 24','Čec 24','Srp 24','Zář 24',
+    'Říj 24','Lis 24','Pro 24','Led 25','Úno 25','Bře 25',
+    'Dub 25','Kvě 25','Čer 25','Čec 25','Srp 25','Zář 25',
+    'Říj 25','Lis 25','Pro 25','Led 26','Úno 26','Bře 26','Dub 26*'
+  ];
+  const spend = [
+    40384,34619,31732,29365,54472,43135,
+    39731,56995,34758,16845,7080,18824,
+    30674,7330,9504,19770,36607,24342,
+    23709,43139,26484,12953,15199,29046,11270
+  ];
+  const revenue = [
+    321535,272979,202199,343236,514567,290244,
+    282814,565709,273398,121654,185066,449683,
+    324483,144984,146830,265361,616039,254725,
+    325345,684381,300059,166298,198540,579436,102008
+  ];
+  const roas = spend.map((s,i) => s > 0 ? +(revenue[i]/s).toFixed(1) : 0);
+
+  const chartDefaults = {
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#0C0C42',
+        borderColor: 'rgba(13,212,205,0.3)',
+        borderWidth: 1,
+        titleColor: '#A0A3BD',
+        bodyColor: '#FFFFFF',
+        padding: 12,
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#A0A3BD', font: { family: 'Montserrat', size: 11 }, maxRotation: 45 },
+        grid: { color: 'rgba(255,255,255,0.05)' }
+      },
+      y: {
+        ticks: { color: '#A0A3BD', font: { family: 'Montserrat', size: 11 } },
+        grid: { color: 'rgba(255,255,255,0.05)' }
+      }
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false }
+  };
+
+  // Spend vs Revenue
+  new Chart(document.getElementById('spendChart'), {
+    type: 'bar',
+    data: {
+      labels: months,
+      datasets: [
+        {
+          label: 'Hodnota konverzí (Kč)',
+          data: revenue,
+          backgroundColor: 'rgba(13,212,205,0.25)',
+          borderColor: '#0DD4CD',
+          borderWidth: 2,
+          borderRadius: 4,
+          order: 2
+        },
+        {
+          label: 'Výdaje (Kč)',
+          data: spend,
+          backgroundColor: 'rgba(203,0,215,0.3)',
+          borderColor: '#CB00D7',
+          borderWidth: 2,
+          borderRadius: 4,
+          order: 1
+        }
+      ]
+    },
+    options: {
+      ...chartDefaults,
+      plugins: {
+        ...chartDefaults.plugins,
+        tooltip: {
+          ...chartDefaults.plugins.tooltip,
+          callbacks: {
+            label: ctx => ` ${ctx.dataset.label}: ${ctx.raw.toLocaleString('cs')} Kč`
+          }
+        }
+      },
+      scales: {
+        ...chartDefaults.scales,
+        y: {
+          ...chartDefaults.scales.y,
+          ticks: {
+            ...chartDefaults.scales.y.ticks,
+            callback: v => (v/1000).toFixed(0) + 'k'
+          }
+        }
+      }
+    }
+  });
+
+  // ROAS chart
+  const avgRoas = 11.4;
+  new Chart(document.getElementById('roasChart'), {
+    type: 'line',
+    data: {
+      labels: months,
+      datasets: [
+        {
+          label: 'ROAS',
+          data: roas,
+          borderColor: '#0DD4CD',
+          backgroundColor: 'rgba(13,212,205,0.08)',
+          borderWidth: 2.5,
+          pointBackgroundColor: roas.map(r => r >= 15 ? '#0DD4CD' : r >= 10 ? '#A081D1' : '#686868'),
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          fill: true,
+          tension: 0.3
+        },
+        {
+          label: 'Průměr',
+          data: Array(months.length).fill(avgRoas),
+          borderColor: 'rgba(255,255,255,0.2)',
+          borderWidth: 1.5,
+          borderDash: [6,4],
+          pointRadius: 0,
+          fill: false
+        }
+      ]
+    },
+    options: {
+      ...chartDefaults,
+      plugins: {
+        ...chartDefaults.plugins,
+        tooltip: {
+          ...chartDefaults.plugins.tooltip,
+          callbacks: {
+            label: ctx => ctx.datasetIndex === 0
+              ? ` ROAS: ${ctx.raw}×`
+              : ` Průměr: ${ctx.raw}×`
+          }
+        }
+      },
+      scales: {
+        ...chartDefaults.scales,
+        y: {
+          ...chartDefaults.scales.y,
+          ticks: {
+            ...chartDefaults.scales.y.ticks,
+            callback: v => v + '×'
+          }
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

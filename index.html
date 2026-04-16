@@ -622,6 +622,7 @@
       <li><a href="#kampane">Kampaně</a></li>
       <li><a href="#web">Web</a></li>
       <li><a href="#doporuceni">Doporučení</a></li>
+      <li><a href="#klaviyo">Klaviyo</a></li>
     </ul>
     <span class="nav-badge">Duben 2024 – Duben 2026</span>
   </div>
@@ -1058,6 +1059,323 @@
   </div>
 </section>
 
+<!-- KLAVIYO SECTION -->
+<section id="klaviyo" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">07</div>
+      <div class="section-heading-text">
+        <h2>Klaviyo — Email Marketing</h2>
+        <p>E-mailový kanál generuje zásadní revenue vedle Google Ads. Flows běží na RetentionUp systému, kampaně Petr posílá 1–2× týdně.</p>
+      </div>
+    </div>
+
+    <!-- KPI -->
+    <div class="kpi-grid" style="margin-bottom: var(--space-lg);">
+      <div class="kpi-card" style="border-color: rgba(13,212,205,0.2);">
+        <div class="kpi-label">Email revenue (12 měsíců)</div>
+        <div class="kpi-value cyan">2 438 000 Kč</div>
+        <div class="kpi-sub">Atribuováno přes email kanál</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Nejlepší flow — RPR</div>
+        <div class="kpi-value">116 Kč</div>
+        <div class="kpi-sub">Welcome Flow — revenue per recipient</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Aktivní flows</div>
+        <div class="kpi-value">9 <span style="font-size:18px;color:var(--color-text-muted)">/ 12</span></div>
+        <div class="kpi-sub">3 v draftu — příležitost</div>
+        <span class="kpi-badge negative">3 drafty čekají</span>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Nejlepší kampaň (open rate)</div>
+        <div class="kpi-value">51,1 %</div>
+        <div class="kpi-sub">BU1 Flex launch — srpen 2025</div>
+        <span class="kpi-badge positive">2,5× průměr oboru</span>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Welcome Flow — revenue</div>
+        <div class="kpi-value cyan">1 198 000 Kč</div>
+        <div class="kpi-sub">7,02 % konverzní poměr — absolutní hvězda</div>
+      </div>
+      <div class="kpi-card purple-accent">
+        <div class="kpi-label">Abandoned Cart — RPR</div>
+        <div class="kpi-value">54 Kč</div>
+        <div class="kpi-sub">Nejefektivnější flow na příjemce</div>
+        <span class="kpi-badge positive">2,78 % CVR</span>
+      </div>
+    </div>
+
+    <!-- Email revenue chart -->
+    <div class="chart-card" style="margin-bottom: var(--space-md);">
+      <div class="chart-header">
+        <div class="chart-title">Email revenue po měsících (Kč) — Klaviyo atribuce</div>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#0DD4CD"></div> Email revenue</div>
+        </div>
+      </div>
+      <div class="chart-wrap"><canvas id="emailRevenueChart"></canvas></div>
+    </div>
+
+    <!-- Flows table -->
+    <h3 style="margin-bottom: var(--space-md);">Výkon flows (posledních 12 měsíců)</h3>
+    <div class="table-wrap" style="margin-bottom: var(--space-lg);">
+      <table>
+        <thead>
+          <tr>
+            <th>Flow</th>
+            <th>Status</th>
+            <th>Příjemci</th>
+            <th>Open rate</th>
+            <th>CVR</th>
+            <th>Revenue (Kč)</th>
+            <th>RPR (Kč)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Welcome Flow</strong></td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Live</span></td>
+            <td>10 466</td>
+            <td>38,2 %</td>
+            <td><span class="roas-badge roas-high">7,02 %</span></td>
+            <td><strong>1 197 875</strong></td>
+            <td><span class="roas-badge roas-high">116 Kč</span></td>
+          </tr>
+          <tr>
+            <td><strong>Abandoned Product</strong></td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Live</span></td>
+            <td>12 188</td>
+            <td>27,7 %</td>
+            <td><span class="roas-badge roas-mid">1,76 %</span></td>
+            <td><strong>414 599</strong></td>
+            <td><span class="roas-badge roas-mid">34 Kč</span></td>
+          </tr>
+          <tr>
+            <td><strong>Abandoned Cart</strong></td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Live</span></td>
+            <td>3 653</td>
+            <td>29,8 %</td>
+            <td><span class="roas-badge roas-high">2,78 %</span></td>
+            <td><strong>195 525</strong></td>
+            <td><span class="roas-badge roas-high">54 Kč</span></td>
+          </tr>
+          <tr>
+            <td><strong>Customer Thank You</strong></td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Live</span></td>
+            <td>18 011</td>
+            <td>34,2 %</td>
+            <td>0,30 %</td>
+            <td>100 776</td>
+            <td>6 Kč</td>
+          </tr>
+          <tr>
+            <td><strong>Abandoned Site</strong></td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Live</span></td>
+            <td>4 448</td>
+            <td>29,8 %</td>
+            <td>0,77 %</td>
+            <td>67 578</td>
+            <td>15 Kč</td>
+          </tr>
+          <tr>
+            <td><strong>Upsell Flow</strong></td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Live</span></td>
+            <td>12 156</td>
+            <td>24,7 %</td>
+            <td>0,14 %</td>
+            <td>37 931</td>
+            <td>3 Kč</td>
+          </tr>
+          <tr>
+            <td><strong>Review Request</strong></td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Live</span></td>
+            <td>10 807</td>
+            <td>23,5 %</td>
+            <td>0,13 %</td>
+            <td>23 891</td>
+            <td>2 Kč</td>
+          </tr>
+          <tr>
+            <td><strong>Sunset Unengaged</strong></td>
+            <td><span class="status-badge status-active"><span class="status-dot"></span>Live</span></td>
+            <td>5 676</td>
+            <td>41,0 %</td>
+            <td>0,11 %</td>
+            <td>11 993</td>
+            <td>2 Kč</td>
+          </tr>
+          <tr style="opacity:0.5;">
+            <td><strong>Back In Stock Flow</strong> ⚠️</td>
+            <td><span class="status-badge status-paused"><span class="status-dot"></span>Draft</span></td>
+            <td>—</td><td>—</td><td>—</td><td>0</td><td>—</td>
+          </tr>
+          <tr style="opacity:0.5;">
+            <td><strong>Welcome Flow EN</strong> ⚠️</td>
+            <td><span class="status-badge status-paused"><span class="status-dot"></span>Draft</span></td>
+            <td>—</td><td>—</td><td>—</td><td>0</td><td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Campaign top performers -->
+    <h3 style="margin-bottom: var(--space-md);">TOP kampaně (posledních 12 měsíců)</h3>
+    <div class="table-wrap" style="margin-bottom: var(--space-lg);">
+      <table>
+        <thead>
+          <tr>
+            <th>Kampaň</th>
+            <th>Odesláno</th>
+            <th>Příjemci</th>
+            <th>Open rate</th>
+            <th>Konverze</th>
+            <th>Revenue (Kč)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Týden mimo pravidla</strong> (Black Friday −20 %)</td>
+            <td>17. 11. 2025</td>
+            <td>7 713</td>
+            <td>33,3 %</td>
+            <td>75</td>
+            <td><span class="roas-badge roas-high">127 531</span></td>
+          </tr>
+          <tr>
+            <td><strong>9. narozeniny BU1</strong></td>
+            <td>12. 3. 2026</td>
+            <td>11 397</td>
+            <td>24,3 %</td>
+            <td>58</td>
+            <td><span class="roas-badge roas-high">97 385</span></td>
+          </tr>
+          <tr>
+            <td><strong>9. narozeniny — připomínka</strong></td>
+            <td>15. 3. 2026</td>
+            <td>11 337</td>
+            <td>29,5 %</td>
+            <td>41</td>
+            <td><span class="roas-badge roas-mid">67 088</span></td>
+          </tr>
+          <tr>
+            <td><strong>Týden mimo pravidla — poslední den</strong></td>
+            <td>23. 11. 2025</td>
+            <td>7 824</td>
+            <td>31,5 %</td>
+            <td>33</td>
+            <td><span class="roas-badge roas-mid">52 045</span></td>
+          </tr>
+          <tr>
+            <td><strong>BU1 Flex launch</strong> 🏆 open rate</td>
+            <td>12. 8. 2025</td>
+            <td>6 395</td>
+            <td><span class="roas-badge roas-high">51,1 %</span></td>
+            <td>20</td>
+            <td>33 404</td>
+          </tr>
+          <tr>
+            <td><strong>Výprodej oblečení</strong></td>
+            <td>3. 6. 2025</td>
+            <td>5 932</td>
+            <td>49,6 %</td>
+            <td>11</td>
+            <td>19 159</td>
+          </tr>
+          <tr>
+            <td><strong>Bazar rukavic −60 %</strong></td>
+            <td>18. 7. 2025</td>
+            <td>6 998</td>
+            <td>46,5 %</td>
+            <td>8</td>
+            <td>16 366</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Klaviyo insights -->
+    <div class="two-col">
+      <div class="web-card">
+        <div class="web-card-header">
+          <div class="web-logo" style="background:rgba(203,0,215,0.1);color:var(--color-accent-purple);">✅ Silné stránky</div>
+          <h3>Co funguje skvěle</h3>
+        </div>
+        <ul class="improvement-list">
+          <li>Welcome Flow má 7 % CVR — to je mimořádný výsledek, průměr oboru je 1–2 %</li>
+          <li>Open rates kampaní 46–51 % u produktových launců — zákazníci jsou vysoce engažovaní</li>
+          <li>Black Friday kampaň vygenerovala 127k Kč z jednoho e-mailu (7,7k příjemců)</li>
+          <li>Narozeninové kampaně tvoří silný opakující se peak v březnu</li>
+          <li>Sunset flow čistí seznam a zachovává zdravou doručitelnost</li>
+          <li>Kampaně mají konzistentní 1–2× týdně kadenci — bez spamování</li>
+        </ul>
+      </div>
+      <div class="web-card">
+        <div class="web-card-header">
+          <div class="web-logo" style="background:rgba(255,160,0,0.1);color:#ffa500;">⚠️ Příležitosti</div>
+          <h3>Co chybí nebo spí</h3>
+        </div>
+        <ul class="improvement-list">
+          <li><strong>Back In Stock Flow je v draftu</strong> — seznam "Back in stock subscribers" existuje od října 2025, flow ale nikdy nespustil</li>
+          <li><strong>Welcome Flow EN je v draftu</strong> — anglický newsletter existuje od května 2025, ale noví EN subscribéři nedostávají welcome sekvenci</li>
+          <li>Upsell Flow má velmi nízký CVR (0,14 %) — flow potřebuje revizi obsahu a timingu</li>
+          <li>Abandoned Cart má jen 3 653 příjemců vs 12 188 pro Abandoned Product — proč tak málo? Trigger je pravděpodobně špatně nastaven</li>
+          <li>Chybí win-back flow pro zákazníky, kteří nekoupili 6+ měsíců</li>
+          <li>Kampaně nemají A/B testování subject lines — příležitost pro optimalizaci</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMBINED PICTURE -->
+<section id="celkovy-obraz" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">08</div>
+      <div class="section-heading-text">
+        <h2>Celkový obraz — Ads + Email</h2>
+        <p>Kombinace Google Ads a Klaviyo ukazuje sílu multichannel strategie. Oba kanály se navzájem posilují.</p>
+      </div>
+    </div>
+
+    <div class="chart-card" style="margin-bottom: var(--space-md);">
+      <div class="chart-header">
+        <div class="chart-title">Google Ads vs. Email revenue — porovnání po měsících (Kč)</div>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#CB00D7"></div> Google Ads (hodnota konv.)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#0DD4CD"></div> Email Klaviyo (atrib. revenue)</div>
+        </div>
+      </div>
+      <div class="chart-wrap" style="height:360px;"><canvas id="combinedChart"></canvas></div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card" style="border-color:rgba(203,0,215,0.3);">
+        <div class="kpi-label">Google Ads — 12 měs.</div>
+        <div class="kpi-value">4 109 000 Kč</div>
+        <div class="kpi-sub">Hodnota konverzí (ROAS 14,2×)</div>
+      </div>
+      <div class="kpi-card" style="border-color:rgba(13,212,205,0.3);">
+        <div class="kpi-label">Email Klaviyo — 12 měs.</div>
+        <div class="kpi-value cyan">2 438 000 Kč</div>
+        <div class="kpi-sub">Atribuovaný revenue z emailu</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Podíl emailu na celku</div>
+        <div class="kpi-value">~37 %</div>
+        <div class="kpi-sub">Email vs. celkový atrib. revenue</div>
+      </div>
+      <div class="kpi-card purple-accent">
+        <div class="kpi-label">Upozornění</div>
+        <div class="kpi-value" style="font-size:18px;">Overlap!</div>
+        <div class="kpi-sub">Oba kanály mohou atribuovat stejný nákup — čísla nelze jednoduše sčítat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr class="divider" />
 
 <!-- FOOTER -->
@@ -1220,6 +1538,82 @@
             callback: v => v + '×'
           }
         }
+      }
+    }
+  });
+
+  // Email revenue chart (Klaviyo)
+  const emailMonths = ['Dub 25','Kvě 25','Čer 25','Čec 25','Srp 25','Zář 25','Říj 25','Lis 25','Pro 25','Led 26','Úno 26','Bře 26','Dub 26*'];
+  const emailRevenue = [77781, 101701, 125009, 158163, 293926, 140653, 131544, 567153, 166169, 40982, 76525, 503366, 54982];
+
+  new Chart(document.getElementById('emailRevenueChart'), {
+    type: 'bar',
+    data: {
+      labels: emailMonths,
+      datasets: [{
+        label: 'Email revenue (Kč)',
+        data: emailRevenue,
+        backgroundColor: emailRevenue.map(v => v > 400000 ? 'rgba(13,212,205,0.6)' : 'rgba(13,212,205,0.25)'),
+        borderColor: '#0DD4CD',
+        borderWidth: 2,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      ...chartDefaults,
+      plugins: {
+        ...chartDefaults.plugins,
+        tooltip: {
+          ...chartDefaults.plugins.tooltip,
+          callbacks: { label: ctx => ` Email revenue: ${ctx.raw.toLocaleString('cs')} Kč` }
+        }
+      },
+      scales: {
+        ...chartDefaults.scales,
+        y: { ...chartDefaults.scales.y, ticks: { ...chartDefaults.scales.y.ticks, callback: v => (v/1000).toFixed(0) + 'k' } }
+      }
+    }
+  });
+
+  // Combined Ads + Email chart
+  const adsRevYear2 = [324483, 144984, 146830, 265361, 616039, 254725, 325345, 684381, 300059, 166298, 198540, 579436, 102008];
+
+  new Chart(document.getElementById('combinedChart'), {
+    type: 'bar',
+    data: {
+      labels: emailMonths,
+      datasets: [
+        {
+          label: 'Google Ads (hodnota konverzí)',
+          data: adsRevYear2,
+          backgroundColor: 'rgba(203,0,215,0.3)',
+          borderColor: '#CB00D7',
+          borderWidth: 2,
+          borderRadius: 4,
+        },
+        {
+          label: 'Email Klaviyo (revenue)',
+          data: emailRevenue,
+          backgroundColor: 'rgba(13,212,205,0.3)',
+          borderColor: '#0DD4CD',
+          borderWidth: 2,
+          borderRadius: 4,
+        }
+      ]
+    },
+    options: {
+      ...chartDefaults,
+      plugins: {
+        ...chartDefaults.plugins,
+        tooltip: {
+          ...chartDefaults.plugins.tooltip,
+          callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.raw.toLocaleString('cs')} Kč` }
+        }
+      },
+      scales: {
+        ...chartDefaults.scales,
+        x: { ...chartDefaults.scales.x, stacked: false },
+        y: { ...chartDefaults.scales.y, ticks: { ...chartDefaults.scales.y.ticks, callback: v => (v/1000).toFixed(0) + 'k' } }
       }
     }
   });

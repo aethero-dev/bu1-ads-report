@@ -623,6 +623,7 @@
       <li><a href="#web">Web</a></li>
       <li><a href="#doporuceni">Doporučení</a></li>
       <li><a href="#klaviyo">Klaviyo</a></li>
+      <li><a href="#shopify">Shopify</a></li>
     </ul>
     <span class="nav-badge">Duben 2024 – Duben 2026</span>
   </div>
@@ -1432,13 +1433,113 @@
 
 <hr class="divider" />
 
+<!-- SHOPIFY SECTION -->
+<section id="shopify" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">09</div>
+      <div class="section-heading-text">
+        <h2>Shopify — Prodejní data</h2>
+        <p>Data z nového Shopify store (spuštěn 15. 2. 2026). Reálná čísla objednávek, AOV a produktového mixu.</p>
+      </div>
+    </div>
+
+    <!-- KPI row -->
+    <div class="kpi-grid" style="margin-bottom: var(--space-md);">
+      <div class="kpi-card">
+        <div class="kpi-label">Revenue (Feb–Apr 2026)</div>
+        <div class="kpi-value cyan">2 518 000 Kč</div>
+        <div class="kpi-sub">1 425 paid objednávek · 61 dní</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Průměrná hodnota objednávky</div>
+        <div class="kpi-value">1 767 Kč</div>
+        <div class="kpi-sub">AOV — skutečná hodnota z dat</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Březen 2026 (narozeniny)</div>
+        <div class="kpi-value">1 818 000 Kč</div>
+        <div class="kpi-sub">1 072 objednávek za jeden měsíc</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Rukavice — podíl na revenue</div>
+        <div class="kpi-value">~95 %</div>
+        <div class="kpi-sub">Oblečení a doplňky jsou doplňkové</div>
+      </div>
+    </div>
+
+    <!-- Monthly revenue bar -->
+    <div class="chart-card" style="margin-bottom: var(--space-md);">
+      <div class="chart-header">
+        <div class="chart-title">Shopify revenue po měsících (Kč) — paid objednávky</div>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#0DD4CD"></div> Revenue (Kč)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#CB00D7"></div> Počet objednávek</div>
+        </div>
+      </div>
+      <div class="chart-wrap" style="height:280px;"><canvas id="shopifyRevenueChart"></canvas></div>
+    </div>
+
+    <!-- Two columns: top products + product mix -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-md); margin-bottom:var(--space-md);">
+
+      <!-- Top products table -->
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">Top 10 produktů (Feb–Apr 2026)</div></div>
+        <table class="data-table" style="margin-top:var(--space-sm);">
+          <thead><tr><th>Produkt</th><th style="text-align:right">Ks</th><th style="text-align:right">Revenue</th></tr></thead>
+          <tbody>
+            <tr><td>BU1 Flex</td><td style="text-align:right">135</td><td style="text-align:right">230 524 Kč</td></tr>
+            <tr><td>BU1 Heaven NC</td><td style="text-align:right">99</td><td style="text-align:right">199 562 Kč</td></tr>
+            <tr><td>BU1 Sky</td><td style="text-align:right">127</td><td style="text-align:right">191 702 Kč</td></tr>
+            <tr><td>BU1 Light Black NC 2.0</td><td style="text-align:right">68</td><td style="text-align:right">136 567 Kč</td></tr>
+            <tr><td>BU1 Classic NC</td><td style="text-align:right">74</td><td style="text-align:right">126 859 Kč</td></tr>
+            <tr><td>BU1 All Black NC</td><td style="text-align:right">68</td><td style="text-align:right">116 040 Kč</td></tr>
+            <tr><td>BU1 XX NC</td><td style="text-align:right">86</td><td style="text-align:right">112 254 Kč</td></tr>
+            <tr><td>BU1 Unlimited NC</td><td style="text-align:right">74</td><td style="text-align:right">104 088 Kč</td></tr>
+            <tr><td>BU1 Heaven Roll Finger</td><td style="text-align:right">42</td><td style="text-align:right">85 117 Kč</td></tr>
+            <tr><td>BU1 One Blue Hyla</td><td style="text-align:right">42</td><td style="text-align:right">84 566 Kč</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Insights -->
+      <div style="display:flex; flex-direction:column; gap:var(--space-sm);">
+        <div class="chart-card" style="flex:1;">
+          <div class="chart-header"><div class="chart-title">Produktový mix — kategorie</div></div>
+          <div class="chart-wrap" style="height:200px;"><canvas id="shopifyMixChart"></canvas></div>
+        </div>
+        <div class="chart-card" style="flex:0 0 auto; padding:var(--space-sm);">
+          <div class="kpi-label" style="margin-bottom:8px;">📦 Šampón na rukavice</div>
+          <p style="font-size:14px; color:var(--color-text-muted); margin:0;">184 ks prodáno za 2 měsíce — přirozený cross-sell k rukavicím. Balení 5 šampónů pro tým (1 200 Kč) je nevyužitá příležitost v B2B segmentu.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key insights -->
+    <div class="insight-box" style="margin-bottom:0;">
+      <h3>Klíčové závěry ze Shopify dat</h3>
+      <ul>
+        <li><strong>BU1 Flex a Heaven NC vedou</strong> — prémiové rukavice (1 499–1 999 Kč) dominují prodeji, ne levná řada. AOV 1 767 Kč to potvrzuje.</li>
+        <li><strong>Březen 2026 = 72 % revenue za 2 měsíce</strong> — narozeninová kampaň měla masivní dopad. Podobný objem se dá čekat u 10. narozenin.</li>
+        <li><strong>Junior řada funguje</strong> — Junior BU1 Triangle (52 ks), Junior BU1 Unlimited (57 ks) — rodiče kupují dětem ve velkém množství.</li>
+        <li><strong>0-stock produkty blokují revenue</strong> — desítky aktivních rukavic s 0 ks na skladě jsou stále viditelné. Back In Stock flow + rychlejší doplnění skladu = přímý dopad.</li>
+        <li><strong>Store byl přebudován 15. 2. 2026</strong> — data před tímto datem nejsou v Shopify API dostupná. Historická čísla pocházejí z Google Ads a Klaviyo.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
 <!-- FOOTER -->
 <footer>
   <div class="container footer-inner">
     <div class="footer-brand">
       Připraveno pro <span>BU1.cz</span> · <span>AETHERO</span> design system
     </div>
-    <div class="footer-meta">Generováno: duben 2026 · Data: Google Ads API</div>
+    <div class="footer-meta">Generováno: duben 2026 · Data: Google Ads API · Klaviyo · Shopify</div>
   </div>
 </footer>
 
@@ -1668,6 +1769,98 @@
         ...chartDefaults.scales,
         x: { ...chartDefaults.scales.x, stacked: false },
         y: { ...chartDefaults.scales.y, ticks: { ...chartDefaults.scales.y.ticks, callback: v => (v/1000).toFixed(0) + 'k' } }
+      }
+    }
+  });
+
+  // ── Shopify Revenue Chart ──
+  new Chart(document.getElementById('shopifyRevenueChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Únor 2026 (½)', 'Březen 2026', 'Duben 2026 (partial)'],
+      datasets: [
+        {
+          label: 'Revenue (Kč)',
+          data: [290450, 1817571, 409991],
+          backgroundColor: ['rgba(13,212,205,0.25)', 'rgba(13,212,205,0.7)', 'rgba(13,212,205,0.35)'],
+          borderColor: '#0DD4CD',
+          borderWidth: 2,
+          borderRadius: 6,
+          yAxisID: 'y',
+        },
+        {
+          label: 'Objednávky',
+          data: [133, 1072, 220],
+          type: 'line',
+          borderColor: '#CB00D7',
+          backgroundColor: 'rgba(203,0,215,0.15)',
+          borderWidth: 2,
+          pointRadius: 5,
+          pointBackgroundColor: '#CB00D7',
+          tension: 0.3,
+          yAxisID: 'y2',
+        }
+      ]
+    },
+    options: {
+      ...chartDefaults,
+      plugins: {
+        ...chartDefaults.plugins,
+        tooltip: {
+          ...chartDefaults.plugins.tooltip,
+          callbacks: {
+            label: ctx => ctx.datasetIndex === 0
+              ? ` Revenue: ${ctx.raw.toLocaleString('cs')} Kč`
+              : ` Objednávky: ${ctx.raw}`
+          }
+        }
+      },
+      scales: {
+        x: { ...chartDefaults.scales.x },
+        y: {
+          ...chartDefaults.scales.y,
+          position: 'left',
+          ticks: { ...chartDefaults.scales.y.ticks, callback: v => (v/1000).toFixed(0) + 'k Kč' }
+        },
+        y2: {
+          type: 'linear',
+          position: 'right',
+          grid: { drawOnChartArea: false },
+          ticks: { color: '#A081D1', font: { size: 11 } }
+        }
+      }
+    }
+  });
+
+  // ── Shopify Product Mix Donut ──
+  new Chart(document.getElementById('shopifyMixChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Rukavice senior', 'Rukavice junior', 'Oblečení', 'Doplňky & ostatní'],
+      datasets: [{
+        data: [1820000, 574000, 81000, 43000],
+        backgroundColor: ['#0DD4CD', '#55289E', '#CB00D7', '#A081D1'],
+        borderColor: '#0C0C42',
+        borderWidth: 3,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '62%',
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: { color: '#A0A3BD', font: { size: 11 }, padding: 10, boxWidth: 12 }
+        },
+        tooltip: {
+          backgroundColor: '#0C0C42',
+          titleColor: '#fff',
+          bodyColor: '#A0A3BD',
+          callbacks: { label: ctx => ` ${ctx.label}: ${(ctx.raw/1000).toFixed(0)}k Kč` }
+        }
       }
     }
   });

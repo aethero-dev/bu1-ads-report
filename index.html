@@ -624,6 +624,7 @@
       <li><a href="#doporuceni">Doporučení</a></li>
       <li><a href="#klaviyo">Klaviyo</a></li>
       <li><a href="#shopify">Shopify</a></li>
+      <li><a href="#synteza">Syntéza</a></li>
     </ul>
     <span class="nav-badge">Duben 2024 – Duben 2026</span>
   </div>
@@ -1390,8 +1391,8 @@
     <div class="section-heading">
       <div class="section-number">08</div>
       <div class="section-heading-text">
-        <h2>Celkový obraz — Ads + Email</h2>
-        <p>Kombinace Google Ads a Klaviyo ukazuje sílu multichannel strategie. Oba kanály se navzájem posilují.</p>
+        <h2>Ads + Email — ověřeno Shopify daty</h2>
+        <p>Shopify API posloužilo jako ground truth. Výsledek: kanály si <strong>nepřekrývají</strong> — větší zjištění je, že 40 % obratu pochází z kanálů, které ani jeden neatribuuje.</p>
       </div>
     </div>
 
@@ -1406,26 +1407,55 @@
       <div class="chart-wrap" style="height:360px;"><canvas id="combinedChart"></canvas></div>
     </div>
 
+    <!-- Attribution breakdown — March 2026 case study -->
+    <div class="chart-card" style="margin-bottom: var(--space-md);">
+      <div class="chart-header">
+        <div class="chart-title">Atribuční analýza — Březen 2026 (plný měsíc, ground truth = Shopify)</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-md); padding:var(--space-md) var(--space-md) 0;">
+        <div>
+          <div class="chart-wrap" style="height:240px;"><canvas id="attributionChart"></canvas></div>
+        </div>
+        <div>
+          <table class="data-table">
+            <thead><tr><th>Kanál</th><th style="text-align:right">Revenue</th><th style="text-align:right">Podíl</th></tr></thead>
+            <tbody>
+              <tr><td><span style="color:#CB00D7">■</span> Google Ads</td><td style="text-align:right">579 436 Kč</td><td style="text-align:right">31,9 %</td></tr>
+              <tr><td><span style="color:#0DD4CD">■</span> Klaviyo email</td><td style="text-align:right">503 366 Kč</td><td style="text-align:right">27,7 %</td></tr>
+              <tr><td><span style="color:#55289E">■</span> Organic / přímé / social</td><td style="text-align:right">734 769 Kč</td><td style="text-align:right">40,4 %</td></tr>
+              <tr style="border-top:1px solid rgba(255,255,255,0.1); font-weight:600;"><td>Shopify celkem</td><td style="text-align:right">1 817 571 Kč</td><td style="text-align:right">100 %</td></tr>
+            </tbody>
+          </table>
+          <div class="insight-box" style="margin-top:var(--space-sm); padding:var(--space-sm);">
+            <p style="margin:0; font-size:14px;"><strong>Overlap = žádný.</strong> Součet Ads + Email (1 082 802 Kč) je nižší než Shopify celkem (1 817 571 Kč). Kanály si nepřekrývají — naopak, 40 % obratu pochází ze zdrojů, které Google Ads ani Klaviyo vůbec neatribuují: přímé vstupy, SEO, sociální sítě a word-of-mouth. BU1 má silný brand efekt nezávislý na placených kanálech.</p>
+          </div>
+        </div>
+      </div>
+      <div style="padding: 0 var(--space-md) var(--space-md);">
+        <p style="font-size:12px; color:var(--color-text-muted); margin:var(--space-sm) 0 0;">Poznámka: Únor 2026 je sledován jen od 15. 2. (spuštění nového store), duben jen do 16. 4. Březen je jediný plný měsíc — proto slouží jako referenční bod.</p>
+      </div>
+    </div>
+
     <div class="kpi-grid">
       <div class="kpi-card" style="border-color:rgba(203,0,215,0.3);">
-        <div class="kpi-label">Google Ads — 12 měs.</div>
+        <div class="kpi-label">Google Ads — 12 měs. (atrib.)</div>
         <div class="kpi-value">4 109 000 Kč</div>
-        <div class="kpi-sub">Hodnota konverzí (ROAS 14,2×)</div>
+        <div class="kpi-sub">Hodnota konverzí · ROAS 14,2×</div>
       </div>
       <div class="kpi-card" style="border-color:rgba(13,212,205,0.3);">
-        <div class="kpi-label">Email Klaviyo — 12 měs.</div>
+        <div class="kpi-label">Klaviyo email — 12 měs. (atrib.)</div>
         <div class="kpi-value cyan">2 438 000 Kč</div>
         <div class="kpi-sub">Atribuovaný revenue z emailu</div>
       </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Podíl emailu na celku</div>
-        <div class="kpi-value">~37 %</div>
-        <div class="kpi-sub">Email vs. celkový atrib. revenue</div>
+      <div class="kpi-card" style="border-color:rgba(85,40,158,0.4);">
+        <div class="kpi-label">Organic / přímé (odhad 2025)</div>
+        <div class="kpi-value" style="color:#A081D1;">~3 854 000 Kč</div>
+        <div class="kpi-sub">~40 % obratu — silný brand efekt</div>
       </div>
-      <div class="kpi-card purple-accent">
-        <div class="kpi-label">Upozornění</div>
-        <div class="kpi-value" style="font-size:18px;">Overlap!</div>
-        <div class="kpi-sub">Oba kanály mohou atribuovat stejný nákup — čísla nelze jednoduše sčítat</div>
+      <div class="kpi-card">
+        <div class="kpi-label">Odhadovaný celkový obrat 2025</div>
+        <div class="kpi-value">~9 600 000 Kč</div>
+        <div class="kpi-sub">Odhad dle poměru z Shopify dat</div>
       </div>
     </div>
   </div>
@@ -1526,6 +1556,147 @@
         <li><strong>0-stock produkty blokují revenue</strong> — desítky aktivních rukavic s 0 ks na skladě jsou stále viditelné. Back In Stock flow + rychlejší doplnění skladu = přímý dopad.</li>
         <li><strong>Store byl přebudován 15. 2. 2026</strong> — data před tímto datem nejsou v Shopify API dostupná. Historická čísla pocházejí z Google Ads a Klaviyo.</li>
       </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- FINAL SYNTHESIS -->
+<section id="synteza" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="section-number">10</div>
+      <div class="section-heading-text">
+        <h2>Závěrečná syntéza — BU1 v číslech</h2>
+        <p>Ucelený obraz ze tří datových zdrojů: Google Ads API, Klaviyo a Shopify. Co skutečně víme, co odhadujeme a co je příležitost.</p>
+      </div>
+    </div>
+
+    <!-- Three-source summary table -->
+    <div class="chart-card" style="margin-bottom: var(--space-md);">
+      <div class="chart-header"><div class="chart-title">Co každý zdroj přináší — přehled dat a jejich spolehlivost</div></div>
+      <table class="data-table" style="margin-top:var(--space-sm);">
+        <thead>
+          <tr>
+            <th>Datový zdroj</th>
+            <th>Co měří</th>
+            <th style="text-align:right">Klíčové číslo</th>
+            <th>Spolehlivost</th>
+            <th>Slepé místo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:#CB00D7">Google Ads</strong></td>
+            <td>Revenue atribuovaný kliknutím na reklamu</td>
+            <td style="text-align:right">4 109 000 Kč / rok</td>
+            <td>Vysoká v rámci placené akvizice</td>
+            <td>Nepokrývá organic, email, social</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#0DD4CD">Klaviyo</strong></td>
+            <td>Revenue atribuovaný emailovým kliknutím (5denní okno)</td>
+            <td style="text-align:right">2 438 000 Kč / rok</td>
+            <td>Dobrá pro email retenci</td>
+            <td>Nepokrývá neotevřené emaily, přímé vstupy</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#96BF48">Shopify</strong></td>
+            <td>Skutečný obrat — ground truth</td>
+            <td style="text-align:right">2 518 000 Kč (Feb–Apr 26)</td>
+            <td>Nejvyšší — přesná čísla objednávek</td>
+            <td>Nový store od 15. 2. 2026; starší data chybí</td>
+          </tr>
+          <tr style="background:rgba(13,212,205,0.05); font-weight:600;">
+            <td>Organic / přímé / social</td>
+            <td>Nezachyceno žádným nástrojem</td>
+            <td style="text-align:right">~3 854 000 Kč / rok (odhad)</td>
+            <td>Odvozeno z Shopify poměru (40 %)</td>
+            <td>Bez GA4 nebo Shopify Analytics nelze přesně měřit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BU1 complete picture -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-md); margin-bottom:var(--space-md);">
+
+      <!-- Channel mix donut -->
+      <div class="chart-card">
+        <div class="chart-header"><div class="chart-title">Odhadovaný kanálový mix — celkový obrat 2025</div></div>
+        <div class="chart-wrap" style="height:280px;"><canvas id="channelMixChart"></canvas></div>
+        <p style="font-size:12px; color:var(--color-text-muted); padding:0 var(--space-sm) var(--space-sm); margin:0;">Odhad vychází z atribučního poměru březen 2026 (Shopify ground truth). Součet Ads + Email + Organic = celkový obrat ~9,6M Kč.</p>
+      </div>
+
+      <!-- Key narrative -->
+      <div style="display:flex; flex-direction:column; gap:var(--space-sm);">
+        <div class="kpi-card" style="flex:0 0 auto;">
+          <div class="kpi-label">Celkový odhadovaný obrat 2025</div>
+          <div class="kpi-value cyan">~9 600 000 Kč</div>
+          <div class="kpi-sub">Ověřeno průřezem ze Shopify dat (Bře 26 = full month benchmark)</div>
+        </div>
+        <div class="kpi-card" style="flex:0 0 auto;">
+          <div class="kpi-label">AOV — potvrzeno Shopify</div>
+          <div class="kpi-value">1 767 Kč</div>
+          <div class="kpi-sub">Reálná průměrná hodnota objednávky · 1 425 paid orders</div>
+        </div>
+        <div class="kpi-card" style="flex:1; border-color:rgba(85,40,158,0.4);">
+          <div class="kpi-label">Největší zjištění</div>
+          <div class="kpi-value" style="font-size:20px; color:#A081D1;">Brand > kanály</div>
+          <div class="kpi-sub">40 % obratu v plném měsíci přišlo bez Google Ads i Klaviyo. BU1 má silnou organickou základnu — brankářská komunita, word-of-mouth, přímá loajalita. To je hodnota, která se na billboardu nemeasuruje.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strategic synthesis -->
+    <div class="chart-card" style="margin-bottom: var(--space-md);">
+      <div class="chart-header"><div class="chart-title">Strategický výstup — co data dohromady říkají</div></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--space-md); padding:var(--space-md);">
+
+        <div>
+          <div style="color:var(--color-action-primary); font-family:var(--font-heading); font-size:18px; margin-bottom:8px;">💪 Co funguje výjimečně</div>
+          <ul style="color:var(--color-text-muted); font-size:14px; line-height:1.7; padding-left:16px; margin:0;">
+            <li>Google Ads ROAS 14,2× — výrazně nad průměrem e-commerce</li>
+            <li>Klaviyo Abandoned Cart: RPR 54 Kč, CVR 2,78 % — top flow</li>
+            <li>Welcome Flow: 7 % CVR — silný vstupní bod</li>
+            <li>Narozeninová kampaň 2026: 1 818 000 Kč za měsíc</li>
+            <li>Organický brand efekt: 40 % obratu bez placené reklamy</li>
+            <li>BU1 Flex + Heaven NC = prémiová linka táhne obrat</li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="color:#CB00D7; font-family:var(--font-heading); font-size:18px; margin-bottom:8px;">⚠️ Co je nevyužité</div>
+          <ul style="color:var(--color-text-muted); font-size:14px; line-height:1.7; padding-left:16px; margin:0;">
+            <li>Back In Stock flow v draftu od října 2025 — desítky produktů s 0 ks</li>
+            <li>Remarketing kampaně pozastaveny — 4 448 Abandoned Site příjemců ročně</li>
+            <li>Welcome Flow EN v draftu — EN newsletter roste od května 2025</li>
+            <li>Upsell Flow: 12 156 příjemců, CVR jen 0,14 %</li>
+            <li>Organic/direct kanál (40 %) je zcela neměřen — GA4 chybí nebo není napojeno</li>
+            <li>Sezónní peak srpen–září bez dostatečného budgetu</li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="color:#A081D1; font-family:var(--font-heading); font-size:18px; margin-bottom:8px;">🚀 Kde je největší páka</div>
+          <ul style="color:var(--color-text-muted); font-size:14px; line-height:1.7; padding-left:16px; margin:0;">
+            <li><strong style="color:#fff;">Remarketing → +15–20 % ROAS</strong> — zasáhne zákazníky, které email nezachytí</li>
+            <li><strong style="color:#fff;">Back In Stock → okamžitý revenue</strong> — seznam subscriberů čeká od října</li>
+            <li><strong style="color:#fff;">Shopify Analytics + GA4</strong> — vizibilita organiky, která tvoří 40 % obratu</li>
+            <li><strong style="color:#fff;">10. narozeniny → 2M+ Kč</strong> — opakovat strukturu březnové kampaně 2026</li>
+            <li><strong style="color:#fff;">Trigger AC opravit</strong> — 3,3× více příjemců = 3,3× více revenue z top flow</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Final statement -->
+    <div class="insight-box" style="margin-bottom:0; border-color:rgba(13,212,205,0.4);">
+      <h3 style="color:var(--color-action-primary);">Závěr v jedné větě</h3>
+      <p style="font-size:16px; line-height:1.7; margin:0;">BU1 má <strong>výjimečně efektivní placené kanály</strong> (ROAS 14,2×, Klaviyo RPR 54 Kč) a k tomu <strong>silný organický brand</strong> (40 % obratu bez placené reklamy) — ale přichází o revenue tím, že nemá spuštěný remarketing, tři klíčové flow jsou v draftu a organická návštěvnost není vůbec měřena. Oprava těchto čtyř věcí je realistická cesta k obratu přes 12M Kč v roce 2026.</p>
     </div>
 
   </div>
@@ -1769,6 +1940,72 @@
         ...chartDefaults.scales,
         x: { ...chartDefaults.scales.x, stacked: false },
         y: { ...chartDefaults.scales.y, ticks: { ...chartDefaults.scales.y.ticks, callback: v => (v/1000).toFixed(0) + 'k' } }
+      }
+    }
+  });
+
+  // ── Attribution Breakdown Chart — March 2026 ──
+  new Chart(document.getElementById('attributionChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Google Ads (31,9 %)', 'Klaviyo email (27,7 %)', 'Organic / přímé (40,4 %)'],
+      datasets: [{
+        data: [579436, 503366, 734769],
+        backgroundColor: ['rgba(203,0,215,0.7)', 'rgba(13,212,205,0.7)', 'rgba(85,40,158,0.7)'],
+        borderColor: '#0C0C42',
+        borderWidth: 3,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '60%',
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: { color: '#A0A3BD', font: { size: 11 }, padding: 10, boxWidth: 12 }
+        },
+        tooltip: {
+          backgroundColor: '#0C0C42',
+          titleColor: '#fff',
+          bodyColor: '#A0A3BD',
+          callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw.toLocaleString('cs')} Kč` }
+        }
+      }
+    }
+  });
+
+  // ── Channel Mix Chart — full year 2025 estimate ──
+  new Chart(document.getElementById('channelMixChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Google Ads (39,7 %)', 'Klaviyo email (25,4 %)', 'Organic / přímé (40 %)'],
+      datasets: [{
+        data: [3818610, 1962099, 3853806],
+        backgroundColor: ['rgba(203,0,215,0.7)', 'rgba(13,212,205,0.7)', 'rgba(85,40,158,0.7)'],
+        borderColor: '#0C0C42',
+        borderWidth: 3,
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '60%',
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: { color: '#A0A3BD', font: { size: 11 }, padding: 10, boxWidth: 12 }
+        },
+        tooltip: {
+          backgroundColor: '#0C0C42',
+          titleColor: '#fff',
+          bodyColor: '#A0A3BD',
+          callbacks: { label: ctx => ` ${(ctx.raw/1000000).toFixed(1)}M Kč` }
+        }
       }
     }
   });

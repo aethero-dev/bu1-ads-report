@@ -1432,7 +1432,7 @@
         </div>
       </div>
       <div style="padding: 0 var(--space-md) var(--space-md);">
-        <p style="font-size:12px; color:var(--color-text-muted); margin:var(--space-sm) 0 0;">Poznámka: Únor 2026 je sledován jen od 15. 2. (spuštění nového store), duben jen do 16. 4. Březen je jediný plný měsíc — proto slouží jako referenční bod.</p>
+        <p style="font-size:12px; color:var(--color-text-muted); margin:var(--space-sm) 0 0;">Poznámka: Únor 2026 je sledován jen od 15. 2. (start nativních Shopify objednávek přes REST API — store obsahuje historická data od 2016, ale ta nejsou přes REST API dostupná). Duben jen do 16. 4. Březen je jediný plný měsíc — proto slouží jako referenční bod.</p>
       </div>
     </div>
 
@@ -1470,7 +1470,7 @@
       <div class="section-number">09</div>
       <div class="section-heading-text">
         <h2>Shopify — Prodejní data</h2>
-        <p>Data z nového Shopify store (spuštěn 15. 2. 2026). Reálná čísla objednávek, AOV a produktového mixu.</p>
+        <p>Store obsahuje historická data od roku 2016 (import z WooCommerce). Via REST API jsou dostupné nativní Shopify objednávky od 15. 2. 2026 — plná data v Shopify admin exportu.</p>
       </div>
     </div>
 
@@ -1554,7 +1554,7 @@
         <li><strong>Březen 2026 = 72 % revenue za 2 měsíce</strong> — narozeninová kampaň měla masivní dopad. Podobný objem se dá čekat u 10. narozenin.</li>
         <li><strong>Junior řada funguje</strong> — Junior BU1 Triangle (52 ks), Junior BU1 Unlimited (57 ks) — rodiče kupují dětem ve velkém množství.</li>
         <li><strong>0-stock produkty blokují revenue</strong> — desítky aktivních rukavic s 0 ks na skladě jsou stále viditelné. Back In Stock flow + rychlejší doplnění skladu = přímý dopad.</li>
-        <li><strong>Store byl přebudován 15. 2. 2026</strong> — data před tímto datem nejsou v Shopify API dostupná. Historická čísla pocházejí z Google Ads a Klaviyo.</li>
+        <li><strong>Shopify REST API limit</strong> — store obsahuje historická data od roku 2016 (import z WooCommerce, ~34 000 paid orders), ale REST API vrací pouze nativní objednávky od 15. 2. 2026. Pro analýzu 10leté historie je potřeba Shopify admin export nebo GraphQL API.</li>
       </ul>
     </div>
 
@@ -1607,7 +1607,7 @@
             <td>Skutečný obrat — ground truth</td>
             <td style="text-align:right">2 518 000 Kč (Feb–Apr 26)</td>
             <td>Nejvyšší — přesná čísla objednávek</td>
-            <td>Nový store od 15. 2. 2026; starší data chybí</td>
+            <td>Store obsahuje data od roku 2016 (import z WooCommerce). REST API vrací pouze nativní Shopify objednávky od 15. 2. 2026 — plná historie je dostupná přes Shopify admin export</td>
           </tr>
           <tr style="background:rgba(13,212,205,0.05); font-weight:600;">
             <td>Organic / přímé / social</td>
